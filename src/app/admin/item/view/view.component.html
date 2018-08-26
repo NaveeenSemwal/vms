@@ -1,0 +1,363 @@
+<div class="app-content content container-fluid">
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="basic-layout-icons"><img class="DailyDairyCreateVendor" src="../../../../assets/images/logo/ItemMaster.png" alt="VendorLogo"> Manage Items </h4>
+          <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+          <div class="heading-elements">
+            <ul class="list-inline mb-0">
+
+              <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+              <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+            </ul>
+          
+          </div>
+        </div>
+        <div class="card-body collapse in">
+          <div class="card-block">
+            <div class="panel-body text-center">
+              <div class="table-responsive">
+                <div id="table" class="table-editable">
+                  <span class="table-add float-left mb-3 ml-1">
+                  <a class="text-primary" data-title="View" data-toggle="modal" data-target="#createItems">
+                    <i class="fa fa-plus fa-2x" aria-hidden="true"></i> Add Item
+                    </a>
+                  </span>               
+                  <span class="table-add float-right mb-3 mr-2">
+                    <input type="text" placeholder="Search" class="menu-search form-control round">
+                  </span>
+                  <table class="table table-bordered table-responsive-md table-striped text-center">
+                    <tr>
+                      <th class="text-center">Product Name</th>
+                      <th class="text-center">Unit of Measurement</th>
+                      <th class="text-center">Unit Cost (₹)</th>
+                      <th class="text-center">Image </th>
+                      <th class="text-center">Active</th>
+                      <th class="text-center">Edit / Save</th>
+                    </tr>
+                    <tr>
+                      <td class="pt-3-half" disabled="true">
+                        <input type="text" table-add float-left mb-3 ml-1="form-control" id="prdctname" value="Amul Milk" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM" selected="true">Litres</option>
+                          <option value="UOM">Packets</option>
+                          <option value="UOM">Pcs</option>
+                        </select>
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue" value="52" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                     
+                          <input id="checkbox" type="checkbox">
+                          <label for="checkbox"></label>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit()" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit() {
+                            document.getElementById("prdctname").disabled = false;
+                            document.getElementById("productselect").disabled = false;
+                            document.getElementById("prdctvalue").disabled = false;
+                            document.getElementById("imageUpload").disabled = false;
+                        }
+                      </script>
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                      <script type="text/javascript">
+                      function readURL(input) {
+                          if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                              reader.onload = function(e) {
+                                  $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                                  $('#imagePreview').hide();
+                                  $('#imagePreview').fadeIn(650);
+                              }
+                              reader.readAsDataURL(input.files[0]);
+                          }
+                      }
+                      $("#imageUpload").change(function() {
+                          readURL(this);
+                      });
+
+                      </script>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                      <td class="pt-3-half">
+                        <input type="text" class="form-control" id="prdctname1" value="Amul Bread" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect1" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM">Litres</option>
+                          <option value="UOM" selected="true">Packets</option>
+                          <option value="UOM">Pcs</option>
+                        </select>
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue1" value="18" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload1" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload1"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview1" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                          <input id="checkbox1" type="checkbox">
+                          <label for="checkbox1"></label>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit1()" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit1() {
+                            document.getElementById("prdctname1").disabled = false;
+                            document.getElementById("productselect1").disabled = false;
+                            document.getElementById("prdctvalue1").disabled = false;
+                            document.getElementById("imageUpload1").disabled = false;
+                        }
+                      </script>
+
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                      <td class="pt-3-half">
+                        <input type="text" class="form-control" id="prdctname2" value="Dainik Bhaskar" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect2" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM">Litres</option>
+                          <option value="UOM">Packets</option>
+                          <option value="UOM" selected="true">Pcs</option>
+                        </select>
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue2" value="32" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload2" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview2" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                          <input id="checkbox01" type="checkbox">
+                          <label for="checkbox01"></label>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit2()" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit2() {
+                            document.getElementById("prdctname2").disabled = false;
+                            document.getElementById("productselect2").disabled = false;
+                            document.getElementById("prdctvalue2").disabled = false;
+                            document.getElementById("imageUpload2").disabled = false;
+                        }
+                      </script>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                      <td class="pt-3-half">
+                        <input type="text" class="form-control" id="prdctname3" value="Heritage Milk" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect3" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM" selected="true">Litres</option>
+                          <option value="UOM">Packets</option>
+                          <option value="UOM">Pcs</option>
+                        </select>
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue3" value="52" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload3" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview3" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                          <input id="checkbox04" type="checkbox">
+                          <label for="checkbox04"></label>
+                        </div>
+                      </td>
+
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit3()" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit3() {
+                            document.getElementById("prdctname3").disabled = false;
+                            document.getElementById("productselect3").disabled = false;
+                            document.getElementById("prdctvalue3").disabled = false;
+                            document.getElementById("imageUpload3").disabled = false;
+                        }
+                      </script>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                      <td class="pt-3-half">
+                        <input type="text" class="form-control" id="prdctname4" value="Bread" disabled="true">
+                      </td>
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect4" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM">Litres</option>
+                          <option value="UOM" selected="true">Packets</option>
+                          <option value="UOM">Pcs</option>
+                        </select>
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue4" value="18" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload4" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview4" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                          <input id="checkbox05" type="checkbox">
+                          <label for="checkbox05"></label>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit4()" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit4() {
+                            document.getElementById("prdctname4").disabled = false;
+                            document.getElementById("productselect4").disabled = false;
+                            document.getElementById("prdctvalue4").disabled = false;
+                            document.getElementById("imageUpload4").disabled = false;
+                        }
+                      </script>
+                    </tr>
+                    <!-- This is our clonable table line -->
+                    <tr>
+                      <td class="pt-3-half">
+                        <input type="text" class="form-control" id="prdctname5" value="Times Of India" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <select class="form-control" id="productselect5" disabled="true">
+                          <option value="UOM">Select Measurement</option>
+                          <option value="UOM">Litres</option>
+                          <option value="UOM">Packets</option>
+                          <option value="UOM" selected="true">Pcs</option>
+                        </select>
+
+                      </td>
+                      <td class="pt-3-half">
+                        <input type="number" class="form-control" id="prdctvalue5" value="32" disabled="true">
+                      </td>
+
+                      <td class="pt-3-half">
+                        <div class="avatar-upload">
+                          <div class="avatar-edit">
+                            <input type='file' id="imageUpload5" accept=".png, .jpg, .jpeg" disabled="true" />
+                            <label for="imageUpload5"></label>
+                          </div>
+                          <div class="avatar-preview">
+                            <div id="imagePreview5" style="background-image: url(assets/images/logo/product-icon.png);">
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <div class="checkbox checkbox-primary">
+                          <input id="checkbox06" type="checkbox">
+                          <label for="checkbox06"></label>
+                        </div>
+                      </td>
+                      <td class="pt-3-half">
+                        <button type="button" onclick="Edit5()" id="edit" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="icon-edit"></i> Edit</button>
+                        <button type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="icon-checkmark-round"></i> Save</button>
+                      </td>
+                      <script>
+                        function Edit5() {
+                            document.getElementById("prdctname5").disabled = false;
+                            document.getElementById("productselect5").disabled = false;
+                            document.getElementById("prdctvalue5").disabled = false;
+                            document.getElementById("imageUpload5").disabled = false;
+
+                        }
+                      </script>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<AddItem></AddItem>

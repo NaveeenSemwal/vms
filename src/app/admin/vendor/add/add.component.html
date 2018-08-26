@@ -1,0 +1,193 @@
+<div class="app-content content container-fluid">
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="basic-layout-icons"><img class="DailyDairyCreateVendor" src="assets/images/logo/create-vendor-icon1.png" alt="VendorLogo"> Create Vendor
+          </h4>
+          <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+          <div class="heading-elements">
+            <ul class="list-inline mb-0">
+
+              <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+              <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-body collapse in">
+          <div class="card-block">
+
+            <!-- **************** form started here  ************************* -->
+            <form novalidate #frm="ngForm" (ngSubmit)="addVendor(frm)">
+              <div class="form-body">
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+
+                    <div class="form-group">
+                      <label for="timesheetinput1">Vendor Name *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.vendor_name" name="vendorname" #vendorname="ngModel" class="form-control" placeholder="Vendor name "
+                          required>
+                        <div class="form-control-position">
+                          <i class="icon-office"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                          <label for="timesheetinput1">Contact First Name *</label>
+                          <div class="position-relative has-icon-left">
+                            <input type="text" [(ngModel)]="newVendor.first_name" name="vendorfname" #vendorfname="ngModel" class="form-control" placeholder="First name"
+                              required>
+                            <div class="form-control-position">
+                              <i class="icon-head"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                          <label for="timesheetinput1">Contact Middle Name</label>
+                          <div class="position-relative has-icon-left">
+                            <input type="text" [(ngModel)]="newVendor.middle_name" name="vendormname" #vendormname="ngModel" class="form-control" placeholder="Middle name">
+                            <div class="form-control-position">
+                              <i class="icon-head"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput1">Contact Last Name *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.last_name" name="vendorlname" #vendorlname="ngModel" class="form-control" placeholder="Last name"
+                          required>
+                        <div class="form-control-position">
+                          <i class="icon-head"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="timesheetinput2">Pin Code *</label>
+                      <div class="position-relative has-icon-left selectContainer">
+                        <input type="text" [(ngModel)]="newVendor.pincode" (blur)="getStateCityByPincode(vendorpincode.value)" name="vendorpincode"
+                          #vendorpincode="ngModel" class="form-control" placeholder="Pin code" required>
+                        <div class="form-control-position">
+                          <i class="icon-location2"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput2">State *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.state_name" name="vendorstate" #vendorstate="ngModel" class="form-control" placeholder="State">
+                        <div class="form-control-position">
+                          <i class="icon-map22"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="timesheetinput2">City *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.city_name" name="vendorcity" #vendorcity="ngModel" class="form-control" placeholder="City ">
+                        <div class="form-control-position">
+                          <i class="icon-map4"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+
+
+                    <div class="form-group">
+                      <label for="timesheetinput2">Contact Address *</label>
+                      <div class="position-relative has-icon-left">
+                        <textarea [(ngModel)]="newVendor.address" name="vendoraddress" #vendoraddress="ngModel" rows="3" class="form-control" placeholder="Address "
+                          required></textarea>
+                        <div class="form-control-position">
+                          <i class="icon-file2"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="timesheetinput2">Mobile *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.mobile_number" name="vendormobile" #vendormobile="ngModel" class="form-control"
+                          placeholder="Mobile " required>
+                        <div class="form-control-position">
+                          <i class="icon-phone2"></i>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="timesheetinput2">Email *</label>
+                      <div class="position-relative has-icon-left">
+                        <input type="text" [(ngModel)]="newVendor.email" name="vendoremail" #vendoremail="ngModel" class="form-control" placeholder="Email "
+                          required>
+                        <div class="form-control-position">
+                          <i class="icon-email2"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group checkboxe">
+                      <label for="timesheetinput2">Items *</label>
+
+                      <div class="near_by_hotel_wrapper">
+
+
+                        <div class="table-responsive">
+
+                          <ejs-grid #grid height=315 width=500 (rowSelected)='rowSelected($event)' [dataSource]='data' [allowSorting]="true" [allowPaging]="true"
+                            [pageSettings]='initialPage'>
+                            <e-columns>
+                              <e-column type='checkbox' [allowFiltering]='false' [allowSorting]='false' width='60'></e-column>
+                              <e-column field='Item_Name' headerText='Name' textAlign='Right' width=90></e-column>
+                              <e-column field='UoM_Name' headerText='Unit of Measurement' width=120></e-column>
+                              <e-column field='UnitPrice' headerText='Unit Cost(₹)' textAlign='Right' format='C2' width=90></e-column>
+
+                            </e-columns>
+                          </ejs-grid>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="form-actions right">
+                <button type="button" class="btn btn-warning btn-lg mr-2 DailyDairyCancel"><a href="index.html">
+                  <i class="icon-cross2"></i> Cancel</a>
+                </button>
+                <button type="submit" [disabled]="formSubmitted && frm.invalid" class="btn btn-primary btn-lg mr-2 DailyDairyCancel" data-toggle="modal"
+                  data-target="#confirm-submit"> 
+
+                   
+                  <i class="icon-lock4"></i> Save
+                </button>
+
+                <!--  <button class="btn btn-primary btn-lg" ><i class="icon-paper"></i> Save -->
+              </div>
+
+
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

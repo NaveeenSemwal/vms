@@ -1,0 +1,110 @@
+
+
+
+
+<div class="modal fade" id="createItems" tabindex="-1" role="dialog" aria-labelledby="view" aria-hidden="true">
+  <div class="modal-dialog">    
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title custom_align" id="Heading">Add New Item</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <form class="form" novalidate #frm="ngForm" (ngSubmit)="addItems(frm)">
+                  <div class="form-body">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                          <label for="timesheetinput1">Product Name *</label>
+                          <div class="position-relative has-icon-left">
+                            <input type="text" id="timesheetinput1" [(ngModel)]="addnewItem.item_name" name="name" #itemname="ngModel" class="form-control" placeholder="Name">
+                            <div class="form-control-position">
+                              <i class="icon-list-alt"></i>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="timesheetinput2">Unit Of Measurement *</label>
+                          <div class="position-relative has-icon-left selectContainer">
+                            <select class="form-control" id="selectedMeasurement" >
+                              <option value="0" selected="true">Select Measurement</option>
+                              <option value="1">Litres</option>
+                              <option value="2">Packets</option>
+                              <option value="3">Pcs</option>
+
+                            </select>
+                            <div class="form-control-position">
+                              <i class="icon-tachometer"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                              <label for="timesheetinput2">Unit Cost (₹)</label>
+                              <div class="position-relative has-icon-left">
+                                <input type="number" id="timesheetinput1" [(ngModel)]="addnewItem.item_price"  name="name" #itemcost="ngModel" class="form-control" placeholder="Cost *">
+                                <div class="form-control-position">
+                                  <i class="fa fa-inr"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                              <label for="timesheetinput2">Upload Image</label>
+                              <div class="main-img-preview">
+                                <!-- <img class="thumbnail img-preview" src="" title="Preview Logo"> -->
+                              </div>
+                              <div class="input-group">
+                                <input id="fakeUploadLogo" class="form-control fake-shadow" placeholder="Choose File" disabled="disabled">
+                                <div class="input-group-btn">
+                                  <div class="fileUpload btn btn-danger fake-shadow">
+                                    <span><i class="fa fa-upload"></i> Upload Image</span>
+                                    <input id="logo-id" name="logo" type="file" (change)="onFileChange($event)" #fileInput class="attachment_upload">
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="help-block">* Upload your Image.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="position-relative has-icon-left checkbox">
+                            <div class="checkbox checkbox-primary">
+                              <input id="checkbox1" type="checkbox" checked="">
+                              <label for="checkbox1">Active</label>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-actions right">
+                    <button type="button" class="btn btn-warning btn-md mr-2 DailyDairyCancel" data-dismiss="modal">
+                      <i class="icon-cross2" #closeItemModal></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-md mr-2 DailyDairyCancel" data-title="View" data-toggle="modal" data-target="#submitted">
+                      <i class="icon-lock4"></i> Save
+                    </button>
+                    <!--  <button class="btn btn-primary btn-lg" ><i class="icon-paper"></i> Save -->
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer ">
+            <!-- <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button> -->
+          </div>
+        </div>
+        <!-- /.modal-content -->
+        </div>
+  
+      </div>
+      <!-- /.modal-dialog -->
+ 

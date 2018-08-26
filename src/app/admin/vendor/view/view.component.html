@@ -1,0 +1,46 @@
+<div class="app-content content container-fluid">
+  <div class="content-wrapper">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title" id="basic-layout-icons"><img class="DailyDairyCreateVendor" src="assets/images/logo/create-vendor-icon.png" alt="VendorLogo"> View / Edit
+            Vendor</h4>
+          <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+          <div class="heading-elements">
+            <ul class="list-inline mb-0">
+
+              <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+              <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-body collapse in">
+          <div class="card-block">
+            <span class="table-add float-left mb-3 ml-1"></span>
+
+            <span class="table-add float-right mb-3 mr-2">
+               <input type="text" placeholder="Search" class="menu-search form-control round">
+             </span>
+            <div class="table-responsive">
+            
+              <ejs-grid #grid  (rowSelected)='rowSelected($event)'  [dataSource]='data' [allowSorting]="true" [allowFiltering]="true" [allowPaging]="true" [pageSettings]='initialPage'>
+                <e-columns>
+               
+                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
+                    <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
+                    <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
+                    <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
+                    
+            
+    
+
+                </e-columns>
+                </ejs-grid>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

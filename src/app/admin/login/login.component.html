@@ -1,0 +1,68 @@
+<div class="app-content content container-fluid">
+  <div class="content-wrapper">
+    <div class="content-header row">
+    </div>
+    <div class="content-body">
+      <section class="flexbox-container">
+        <div class="col-md-4 offset-md-4 col-xs-10 offset-xs-1 box-shadow-2 p-0">
+          <div class="card border-grey border-lighten-3 px-2 py-2 m-0">
+            <div class="card-header no-border">
+              <div class="card-title text-xs-center">
+                <img class="DailyDairyBrnadLogo" src="../../../assets/images/logo/DailyDairy Logo.png" alt="branding logo">
+              </div>
+              <h6 class="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2">
+                <span>Login to DailyDairy</span>
+              </h6>
+            </div>
+            <div class="card-body collapse in">
+              <div class="card-block">
+                <form novalidate #frm="ngForm" (ngSubmit)="SubmitLogin(frm)">
+                  <fieldset class="form-group position-relative has-icon-left mb-1">
+                    <input type="text"  class="form-control form-control-lg input-lg" [(ngModel)]="username" #UserName="ngModel" placeholder="User Name"
+                      name="UserName" name="UserName" required>
+                    <div class="form-control-position">
+                      <i class="icon-head"></i>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-group position-relative has-icon-left">
+                    <input type="password" class="form-control form-control-lg input-lg" [(ngModel)]="password" #Password="ngModel" placeholder="Enter Password"
+                      name="Password" required>
+                    <div class="form-control-position">
+                      <i class="icon-key3"></i>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-left">
+                      <fieldset>
+                        <input type="checkbox" id="remember-me" class="chk-remember">
+                        <label for="remember-me"> Remember Me</label>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-right">
+                      <a href="recover-password.html" class="card-link">Forgot Password?</a>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-left">
+                      <button type="reset" value="Reset" class="btn btn-warning mr-1 btn-lg btn-block">
+                        <i class="icon-cross2"></i> Reset
+                      </button>
+                    </div>
+                    <div class="col-md-6 col-xs-12 text-xs-center text-md-right">
+                      <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="icon-lock4"></i> Login
+                      </button>
+                    </div>
+                  </fieldset>
+
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

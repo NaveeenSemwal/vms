@@ -1,0 +1,55 @@
+<div class="app-content content container-fluid">
+  <div class="content-wrapper">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" id="basic-layout-icons"><img class="DailyDairyCreateVendor" src="assets/images/logo/feedback.png" alt="VendorLogo"> View Feedback </h4>
+
+        <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+        <div class="heading-elements">
+          <ul class="list-inline mb-0">
+            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card-bodycollapse in">
+        <div class="card-block">
+
+          <div class="table-responsive">
+
+            <ejs-grid [dataSource]='data' [allowSorting]="true" [allowPaging]="true" [pageSettings]='initialPage'>
+              <e-columns>
+                <e-column headerText='Employee Image' width='150' textAlign='Center'>
+                  <ng-template #template let-data>
+                    <div>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span>
+                    </div>
+
+                  </ng-template>
+                </e-column>
+                <e-column field='Item_Name' headerText='Name' textAlign='Right' width=90></e-column>
+                <e-column field='UoM_Name' headerText='Unit of Measurement' width=120></e-column>
+                <e-column field='UnitPrice' headerText='Unit Cost(₹)' textAlign='Right' format='C2' width=90></e-column>
+                <e-column headerText='Textbox' width='150' textAlign='Center'>
+                  <ng-template #template let-data>
+                    <input type="text" value="{{data.Item_Name}}">
+
+                  </ng-template>
+                </e-column>
+
+              </e-columns>
+            </ejs-grid>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
